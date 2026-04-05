@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-base: #0A0514;
+  --color-surface-bg: #130a21;
+  --color-surface-card: #1c0e35;
+  --color-surface-hover: #26134a;
+
+  --color-primary: #a855f7;
+  --color-primary-hover: #c084fc;
+  --color-secondary: #ec4899;
+  --color-accent: #10b981;
+  --color-warning: #eab308;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-base)] text-slate-200 antialiased font-sans flex flex-col min-h-screen selection:bg-primary/30 selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-[var(--color-surface-bg)]/80 backdrop-blur-md border border-white/5 shadow-xl;
+  }
+  .glass-card {
+    @apply bg-gradient-to-b from-[#1c0e35]/60 to-[#130a21]/60 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 font-heading font-semibold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-primary to-secondary hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:scale-105 active:scale-95;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 font-heading font-medium text-white transition-all duration-300 rounded-full border-2 border-white/10 hover:border-white/30 hover:bg-white/5 active:scale-95;
+  }
+}

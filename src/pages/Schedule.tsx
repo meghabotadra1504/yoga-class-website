@@ -1,7 +1,7 @@
 import SectionHeading from '../components/shared/SectionHeading';
 
 export default function Schedule() {
-  const_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const times = ['08:00 AM - 10:00 AM', '10:00 AM - 12:00 PM', '02:00 PM - 04:00 PM', '06:00 PM - 08:00 PM'];
 
   return (
@@ -13,8 +13,8 @@ export default function Schedule() {
           {/* Header Row */}
           <div className="grid grid-cols-7 gap-4 mb-4">
             <div className="font-bold text-slate-400 uppercase text-sm p-4 text-center">Time</div>
-            {days.map(day => (
-              <div key={day} className="glass font-bold text-primary uppercase text-sm p-4 rounded-xl text-center">
+            {days.map(_ => (
+              <div key={_} className="glass font-bold text-primary uppercase text-sm p-4 rounded-xl text-center">
                 {day}
               </div>
             ))}
